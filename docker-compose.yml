@@ -1,0 +1,19 @@
+version: "3"
+services:
+  java_service:
+    build: ./java_service
+    container_name: java_service_container
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./java_service:/app
+    
+  nodejs_service:
+      build: ./nodejs_service
+      container_name: nodejs_service_container
+      ports:
+        - "6002:6002"
+      volumes:
+        - ./nodejs_service:/app
+        - /app/node_modules
+
